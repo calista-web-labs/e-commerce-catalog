@@ -2,11 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 :root {
-  /* Color Palette dari Gambar 1 */
   --color-men-primary: #002772;
-  --color-men-bg: #D6E6FF;     /* #D6E6FF dari palette */
+  --color-men-bg: #D6E6FF;     
   --color-women-primary: #720060;
-  --color-women-bg: #FDE2FF;   /* #FDE2FF dari palette */
+  --color-women-bg: #FDE2FF;   
   --color-gray: #DCDCDC;
   --color-dark: #1E1E1E;
   --color-white: #FFFFFF;
@@ -18,7 +17,6 @@ body {
   color: var(--color-dark);
 }
 
-/* --- BACKGROUNDS (Class Binding Target) --- */
 .container {
   min-height: 100vh;
   display: flex;
@@ -28,7 +26,6 @@ body {
   overflow: hidden;
 }
 
-/* Pattern Background: Atas warna, Bawah putih (Sesuai Desain) */
 .bg-men-section {
   background-image: linear-gradient(to bottom, var(--color-men-bg) 60%, white 60%);
 }
@@ -39,7 +36,6 @@ body {
   background-color: var(--color-gray);
 }
 
-/* --- CARD COMPONENT --- */
 .card {
   width: 900px;
   min-height: 500px;
@@ -51,7 +47,6 @@ body {
   box-sizing: border-box;
 }
 
-/* --- PRODUCT LAYOUT --- */
 .product-container {
   gap: 40px;
 }
@@ -67,7 +62,6 @@ body {
 .sub-info { display: flex; justify-content: space-between; color: #3F3F3F; margin-bottom: 10px; }
 .rating { display: flex; gap: 5px; align-items: center; }
 
-/* Circles Rating */
 .circle { width: 18px; height: 18px; border-radius: 50%; background-color: #eee; }
 .circle.filled.bg-men { background-color: var(--color-men-primary); }
 .circle.filled.bg-women { background-color: var(--color-women-primary); }
@@ -75,7 +69,6 @@ body {
 .description { font-size: 14px; line-height: 1.5; margin: 20px 0; color: #1E1E1E; }
 .price { font-size: 28px; font-weight: bold; margin-bottom: 20px; }
 
-/* --- BUTTONS --- */
 .cta-buttons { display: flex; gap: 15px; }
 button { flex: 1; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 16px; }
 
@@ -85,7 +78,6 @@ button { flex: 1; padding: 12px; font-weight: bold; border-radius: 4px; cursor: 
 .border-men { background: white; color: var(--color-men-primary); border: 2px solid var(--color-men-primary); }
 .border-women { background: white; color: var(--color-women-primary); border: 2px solid var(--color-women-primary); }
 
-/* --- UNAVAILABLE STATE --- */
 .unavailable-container {
   justify-content: center;
   align-items: center;
@@ -98,7 +90,6 @@ button { flex: 1; padding: 12px; font-weight: bold; border-radius: 4px; cursor: 
 .overlay { text-align: center; margin-top: 100px; }
 .btn-next-outline { width: 300px; background: white; border: 2px solid black; color: black; }
 
-/* --- LOADER --- */
 .loader {
   border: 8px solid #f3f3f3;
   border-top: 8px solid #555;

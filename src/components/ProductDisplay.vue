@@ -58,30 +58,26 @@ export default {
   name: 'ProductDisplay',
   data() {
     return {
-      index: 1,           // Index mulai dari 1 (Instructions Point 1)
-      product: null,      // Variable untuk simpan data
+      index: 1,           
+      product: null,      
       loading: false,
-      isUnavailable: false // Penanda status unavailable
+      isUnavailable: false
     }
   },
   computed: {
-    // Menentukan Background (Biru/Pink/Abu)
     pageClass() {
       if (this.loading) return 'bg-loader';
-      if (this.isUnavailable) return 'bg-unavailable'; // Abu-abu
+      if (this.isUnavailable) return 'bg-unavailable'; 
       if (this.product?.category === "men's clothing") return 'bg-men-section';
       if (this.product?.category === "women's clothing") return 'bg-women-section';
       return 'bg-unavailable';
     },
-    // Menentukan Warna Text (Biru/Pink)
     textClass() {
       return this.product?.category === "men's clothing" ? 'text-men' : 'text-women';
     },
-    // Menentukan Warna Tombol Buy
     buttonClass() {
       return this.product?.category === "men's clothing" ? 'btn-men' : 'btn-women';
     },
-    // Menentukan Warna Border Tombol Next
     borderClass() {
       return this.product?.category === "men's clothing" ? 'border-men' : 'border-women';
     }
@@ -89,19 +85,18 @@ export default {
   methods: {
     async fetchProduct() {
       this.loading = true;
-      this.product = null; // Reset dulu biar bersih
+      this.product = null; 
       this.isUnavailable = false;
 
       try {
         const response = await fetch(`https://fakestoreapi.com/products/${this.index}`);
         const data = await response.json();
 
-        // Cek jika kategori Men atau Women
         if (data.category === "men's clothing" || data.category === "women's clothing") {
-          this.product = data; // Simpan balasan
+          this.product = data;
           this.isUnavailable = false;
         } else {
-          this.isUnavailable = true; // Jangan simpan sebagai produk valid
+          this.isUnavailable = true; 
         }
       } catch (error) {
         console.error(error);
@@ -111,10 +106,9 @@ export default {
       }
     },
     getNextProduct() {
-      // Logic Index (Instructions Point 2 & 1)
       this.index++;
       if (this.index > 20) {
-        this.index = 1; // reset ke 1 jika lebih dari 20
+        this.index = 1; 
       }
       this.fetchProduct();
     }
